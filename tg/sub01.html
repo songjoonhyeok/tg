@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sub01(포트폴리오)</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="tg.css">
+  </head>
+  <script>
+  $(function(){
+
+      $('.gnb>ul>li').hover(function(){
+          $('.gnb>ul>li').children('div').stop() .slideDown()
+
+      },function(){
+          $('.gnb>ul>li').children('div').stop() .slideUp(1000,function(){
+
+          })
+      })
+
+  });
+       // 슬라이드 부분 자바스크립//
+
+  $(function(){
+
+      var idx = 0;
+
+      function slideBanner(start,end,i){
+           $('.slide li').eq(i).find('div').css({
+              'left':start,
+              'display':'block'
+          }).animate({
+              "left":end
+          })
+      }
+
+      $('.slide .next').click(function(){
+          slideBanner("0","-100%",idx);
+          idx++
+          slideBanner("100%","0",idx);
+
+          if(idx ==$('.slide li').size()){
+              idx = 0
+               slideBanner("100%","0",idx);
+          }console.log(idx);
+
+
+
+      })
+
+      $('.slide .prev').click(function(){
+          slideBanner("0","100%",idx);
+          idx--
+          slideBanner("-100%","0",idx);
+
+          if(idx < 0){
+             idx =5
+            slideBanner("-100%","0",idx);
+
+           } console.log(idx);
+
+
+      })
+
+
+  })
+
+
+  </script>
+
+<style media="screen">
+*{margin:0; padding:0;}
+html,body{height:100%;}
+ul{list-style:none;}
+
+
+.slide{    background-color:#171c20;
+           height:100%;
+           background-image: url(http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_bg.png);
+           position:relative;
+           text-align:center;
+           background-repeat:no-repeat;
+           background-position:center;
+           background-size:cover;
+        }
+
+        .slide li{
+            display:inline-block;
+        }
+        .slide li>a{position:relative; top:600px; z-index:10;
+                    display:block;
+                    }
+        .slide li.on>div{display:block;}
+
+        .slide li>div{
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:91.5%;
+            text-align:center;
+            display:none;
+
+        }
+
+
+
+        .slide li img{
+            position:relative;
+            top:200px;
+        }
+        .slide li cite{
+             font-size:3.5vw; color:#fff;
+        }
+         .slide li cite,
+         .slide li span{
+             display:block;
+             position:relative;
+             top:30%;
+             color:#fff;
+            /*<!-- cite=제목태그 -->*/
+         }
+
+
+
+
+
+.btngroup{width:100%; height:50px; position:relative; top:0px;}
+   .next{position:absolute; right:0px; width:90px; height:850px; background-color:transparent;
+         background-image: url(http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_next.png);
+         background-repeat:no-repeat; background-position:center;
+         text-indent: -9999px; border:0px; z-index:5;}
+   .prev{position:absolute; left:0px; z-index:5; width:90px; height:850px;background-color:transparent;
+         background-image: url(http://www.tkgroup.co.kr/kor/_Img/Content/portfolio_prev.png);
+         background-repeat:no-repeat; background-position:center;
+         text-indent: -9999px; border:0px;}
+
+    .won1{width:9px; height:9px; border-radius:50%; margin:0px 30px; border:2px #fff solid; position:relative; top:200px;}
+    .won2{width:9px; height:9px; border-radius:50%; margin:0px 30px; border:2px #fff solid; position:relative; top:200px;}
+    .won3{width:9px; height:9px; border-radius:50%; margin:0px 30px; border:2px #fff solid; position:relative; top:200px;}
+    .won4{width:9px; height:9px; border-radius:50%; margin:0px 30px; border:2px #fff solid; position:relative; top:200px;}
+    .won5{width:9px; height:9px; border-radius:50%; margin:0px 30px; border:2px #fff solid; position:relative; top:200px;}
+
+
+</style>
+  <body>
+    <header>
+    <div class="w">
+      <div class="logo">
+        <h1><a href="index.html"><img src="http://www.tkgroup.co.kr/kor/_Img/logo.png" alt="logo" />
+          </a>
+        </h1>
+        </div>
+      <div class="gnb">
+         <ul>
+           <li class="line1"><span class="line1-1"></span>
+             <a href="#"class="comp1">company</a>
+               <div class="nab1">
+                 <ul>
+                   <li class="nab1-1">
+                    <span></span>
+                   <a href="">회사개요</a>
+                   </li>
+                   <li class="nab1-2">
+                     <a href="">CEO인사말</a>
+                     <span></span>
+                   </li>
+                   <li class="nab1-3">
+                     <span></span>
+                     <a href="">회사연혁</a>
+                    </li>
+                   <li class="nab1-4">
+                     <span></span>
+                     <a href="">관계사 안내</a>
+                   </li>
+                 </ul>
+               </div>
+           </li>
+           <li class="line2"><span class="line1-2"></span>
+           <a href="#"class="mana1">management innovation</a>
+               <div class="nab2">
+                 <ul>
+                   <li class="nab2-1">
+                    <span></span>
+                   <a href="">비전</a>
+                   </li>
+                   <li class="nab2-2">
+                     <a href="">tkway</a>
+                     <span></span>
+                   </li>
+                   <li class="nab2-3">
+                     <span></span>
+                     <a href="">lean</a>
+                    </li>
+                   <li class="nab2-4">
+                     <span></span>
+                     <a href="">tpn</a>
+                   </li>
+                 </ul>
+               </div>
+           </li>
+           <li class="line3"><span class="line1-3"></span>
+            <a href="sub01.html" class="port1">portfolio</a>
+              <div class="nab3">
+                <ul>
+                  <li class="nab3-1">
+                    <span></span>
+                    <a href="">포트폴리오</a>
+                  </li>
+                </ul>
+              </div>
+          </li>
+           <li class="line4"><span class="line1-4"></span>
+           <a href="#" class="susta1">sustainabilty management</a>
+             <div class="nab4">
+               <ul>
+                 <li class="nab4-1">
+                  <span></span>
+                 <a href="">sm</a>
+                 </li>
+                 <li class="nab4-2">
+                   <a href="">지속가능경영보고서</a>
+                   <span></span>
+                 </li>
+                 <li class="nab4-3">
+                   <span></span>
+                   <a href="">정산장학재단</a>
+                  </li>
+                 <li class="nab4-4">
+                   <span></span>
+                   <a href="">장학생지원</a>
+                 </li>
+               </ul>
+             </div>
+          </li>
+           <li class="line5"><span class="line1-5"></span>
+             <a href="#" class="rec1">recruit</a>
+               <div class="nab5">
+                 <!-- <ul>
+                   <li><a href="">sm</a></li>
+                   <li><a href="">지속가능경영보고서</a></li>
+                   <li><a href="">정산장학재단</a></li>
+                   <li><a href="">장학생지원</a></li>
+                 </ul> -->
+               </div>
+           </li>
+         </ul>
+      </div>
+      <div class="gnb-right">
+        <div class="gnb-right01">
+          <span class="gnb-right001">홈</span>
+        </div>
+        <div class="gnb-right02">
+          <span class="gnb-right002">ENG</span>
+        </div>
+        <div class="gnb-right1">
+          <span class="right-line1">메뉴</span>
+          <span class="line1"></span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+      </div>
+    </div>
+    </header>
+    <div class="slide">
+
+           <div class="btngroup">
+               <button class="next">next</button>
+               <button class="prev">prev</button>
+           </div>
+
+           <ul>
+               <li class="on">
+                   <a href=""><button class="won1"></button></a>
+                   <div class="">
+                   <img src="http://www.tkgroup.co.kr/kor/_Img/Content/portfolio01.png" alt="">
+                   <!-- cite=제목태그 -->
+                   <cite>NIKE LUNAREPIC FK</cite>
+                   <span>RUNNING</span>
+                   </div>
+               </li>
+               <li>
+                   <a href=""><button class="won2"></button></a>
+                   <div>
+                   <img src="http://www.tkgroup.co.kr/kor/_Img/Content/portfolio02.png" alt="">
+                   <cite>text</cite>
+                   <span></span>
+                   </div>
+               </li>
+               <li>
+                   <a href=""><button class="won3"></button></a>
+                  <div>
+                   <img src="http://www.tkgroup.co.kr/kor/_Img/Content/portfolio03.png" alt="">
+                   <cite>text</cite>
+                   <span></span>
+                 </div>
+               </li>
+               <li>
+                   <a href=""><button class="won4"></button></a>
+                   <div>
+                   <img src="http://www.tkgroup.co.kr/kor/_Img/Content/portfolio04.png" alt="">
+                   <cite>text</cite>
+                   <span></span>
+                   </div>
+               </li>
+               <li>
+                   <a href=""><button class="won5"></button></a>
+                   <div>
+                   <img src="http://www.tkgroup.co.kr/kor/_Img/Content/portfolio05.png" alt="">
+                   <cite>text</cite>
+                   <span></span>
+                   </div>
+               </li>
+           </ul>
+
+
+       </div>
+       <div id="footer">
+             <div class="text1">
+                <ul>
+                  <li>
+                   <a href="#">
+                     <span><img src="http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png"/></span>
+                     개인정보처리방침
+                   </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                         <span><img src="http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png"/></span>
+                         지속가능보고서다운로드
+                     </a>
+                  </li>
+                </ul>
+             </div>
+             <div class="text2">
+             <p class="logo-img"><img src="http://www.tkgroup.co.kr/kor/_Img/f-logo.png" alt="logo"/></p>
+             <div class="text-text">
+               <span>태광실업(주)</span>
+               <span>경상남도 김해시 김해대로 2635번길 26(안동)</span>
+               <span>tel:055-333-7151</span>
+               <span>fax:055-336-4917</span>
+                  <div class="text-bottom">
+                   <p>Copyright (C) 2016 Taekwang. co., ltd All rights reserved.</p>
+                  </div>
+             </div>
+             </div>
+
+           </div>
+
+
+  </body>
+</html>
